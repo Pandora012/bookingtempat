@@ -18,10 +18,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/antrian', [PesananController::class, 'index']);
 Route::get('/booking', [PesananController::class, 'create']);
 Route::post('/booking', [PesananController::class, 'store']);
+Route::delete('/booking/delete/{id}', [PesananController::class, 'destroy']);
 
-Route::get('/', [ViewController::class, 'index']);
+Route::get('/dashboard', [ViewController::class, 'index']);
 Route::get('/akun', [ViewController::class, 'profile']);
 
+
+Route::get('/', function(){
+    return view('awalan');
+});
 
 Route::get('/login', function () {
     return view('auth.login');

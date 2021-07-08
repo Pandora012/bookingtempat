@@ -17,6 +17,7 @@
                                                 <th>Waktu</th>
                                                 <th>Tanggal Booking</th>
                                                 <th>Status</th>
+                                                <th>Aksi</th>
                                                 <!-- <th>Aksi</th> -->
                                             </tr>
                                         </thead>
@@ -39,12 +40,24 @@
                                                     @default
                                                         
                                                 @endswitch</td>
+                                                
+                                                <td>
+                                                @role('admin')
+                                                    <form action="{{url("booking/delete/{$data->id}")}}" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button class="btn btn-danger">Delete</button>
+                                                    </form>
+                                                    
+                                                @endrole
+                                                </td>
+                                                
                                             @endforeach       
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
-                            <label for="notice" style="padding-left: 2%;"> *Dipesan = Meja telah dipesan <br> *Selesai = Waktu pemesanan meja telah selesai</label>
+                            <label for="notice" style="padding-left: 2%;"> *Dipesan = Meja telah dipesan</label>
                         </div>
                     </div>
                 </main>

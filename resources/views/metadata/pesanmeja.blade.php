@@ -44,18 +44,25 @@
                                             <button type="booking" class="btn btn-primary float-right">Booking</button>
                                     </form>
                                 </div>  
+                                <label for="notice" style="padding-left: 2%;">
+                                  Note : 
+                                    <br>
+                                  1. Untuk melakukan booking tempat minimal 30 menit sebelum datang
+                                  <br>
+                                  2. Jika meja yang diinginkan sudah dipesan diharap menunggu selama 60 menit untuk memesan
+                                </label>
                             </div> 
                              <!-- Form input Stop Disini -->                             
                     </div>
-                    @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
+                     @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <!-- <br><br><br><br>           -->
                 </main>
                 <footer class="py-4 bg-light mt-auto">

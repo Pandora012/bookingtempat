@@ -112,6 +112,8 @@ class PesananController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data= Pesanan::find($id);
+        $data->delete();
+        return redirect()->back();
     }
 }
